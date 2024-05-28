@@ -28,6 +28,10 @@ const Users = {
           label: 'Student',
           value: 'student',
         },
+        {
+          label: 'Parent',
+          value: 'parent',
+        },
       ],
       required: true,
     },

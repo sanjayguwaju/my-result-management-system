@@ -12,19 +12,21 @@ import Teachers from './collections/Teachers';
 import Classes from './collections/Classes';
 import Courses from './collections/Courses';
 import Subjects from './collections/Subjects';
-import Examinations from './collections/Examination';
+import Examinations from './collections/Examinations';
 import Results from './collections/Results';
 import Notifications from './collections/Notifications';
 import Attendance from './collections/Attendance';
+import Media from './collections/Media'; // Add Media collection
+import ExamSchedules from './collections/ExamSchedules'; 
 
 export default buildConfig({
   admin: {
-    user: Users.slug, // Correctly set Users as the admin user collection
+    user: Users.slug,
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
   collections: [
-    Users, // Ensure Users is included in the collections array
+    Users,
     Students,
     Teachers,
     Classes,
@@ -34,6 +36,8 @@ export default buildConfig({
     Results,
     Notifications,
     Attendance,
+    Media,
+    ExamSchedules, // Include Media collection
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
